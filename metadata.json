@@ -1,0 +1,6 @@
+{
+  "name": "Triển Lãm STEM - FPT Bắc Giang",
+  "description": "Website trưng bày sản phẩm STEM Ngày hội Chuyển đổi số - Trường Tiểu học, THCS và THPT FPT Bắc Giang",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
