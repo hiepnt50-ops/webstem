@@ -400,10 +400,11 @@ const Lightbox: React.FC<LightboxProps> = ({
   onNext,
   productTitle,
 }) => {
-  if (!isOpen || images.length === 0) return null;
-
   const currentItem = images[currentIndex];
-  const currentUrl = currentItem ? getDriveImageUrl(currentItem.anh, 2000) : '';
+  const currentUrl = currentItem?.anh ? getDriveImageUrl(currentItem.anh, 2000) : '';
+
+  if (!isOpen || images.length === 0 || !currentUrl) return null;
+
   const hasMultiple = images.length > 1;
 
   return (
@@ -461,11 +462,13 @@ const Lightbox: React.FC<LightboxProps> = ({
         className="relative max-w-full max-h-[85vh] flex flex-col items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={currentUrl}
-          alt={currentItem?.caption || productTitle}
-          className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
-        />
+        {currentUrl ? (
+          <img
+            src={currentUrl}
+            alt={currentItem?.caption || productTitle}
+            className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+          />
+        ) : null}
         {currentItem?.caption && (
           <p className="mt-3 text-white/90 text-xs sm:text-sm text-center max-w-xl px-4 italic">
             {currentItem.caption}
@@ -550,8 +553,15 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     setIsPaused(false);
   };
 
-  // Nếu không có ảnh nào: hiển thị banner gradient theo màu tổ
-  if (total === 0 || !currentItem?.anh) {
+  // URL ảnh hiện tại (ưu tiên thumbnail sz=w1600, dự phòng lh3)
+  const currentUrl = currentItem?.anh && currentItem.anh.trim()
+    ? (useBackup
+        ? getDriveBackupUrl(currentItem.anh)
+        : getDriveImageUrl(currentItem.anh, 1600))
+    : '';
+
+  // Nếu không có ảnh nào hoặc URL rỗng: hiển thị banner gradient theo màu tổ
+  if (total === 0 || !currentItem?.anh || !currentUrl) {
     return (
       <div className="w-full aspect-[4/3] md:aspect-[16/9] bg-gradient-to-br from-slate-100 via-sky-50 to-orange-50 flex flex-col items-center justify-center p-6 text-center border-b border-slate-200">
         <div className="w-16 h-16 rounded-2xl bg-orange-100 text-[#F37021] flex items-center justify-center mb-3 shadow-xs">
@@ -567,11 +577,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
     );
   }
 
-  // URL ảnh hiện tại (ưu tiên thumbnail sz=w1600, dự phòng lh3)
-  const currentUrl = useBackup
-    ? getDriveBackupUrl(currentItem.anh)
-    : getDriveImageUrl(currentItem.anh, 1600);
-
   return (
     <div className="w-full select-none bg-slate-900">
       {/* Khung ảnh: 16:9 trên Desktop, 4:3 trên Mobile */}
@@ -583,26 +588,30 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
         onTouchEnd={handleTouchEnd}
       >
         {/* Nền mờ cùng ảnh phía sau (ambient blur) để không bị viền đen khô cứng */}
-        <img
-          src={currentUrl}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-35 pointer-events-none transition-all duration-700"
-        />
+        {currentUrl ? (
+          <img
+            src={currentUrl}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover blur-2xl scale-110 opacity-35 pointer-events-none transition-all duration-700"
+          />
+        ) : null}
 
         {/* Ảnh chính: object-contain để giữ nguyên 100% chi tiết không bị cắt xén */}
-        <img
-          src={currentUrl}
-          alt={currentItem.caption || productTitle}
-          onError={() => {
-            if (!useBackup && currentItem.anh && !currentItem.anh.startsWith('/')) {
-              setUseBackup(true);
-            }
-          }}
-          className="relative z-10 w-full h-full object-contain cursor-zoom-in transition-opacity duration-300"
-          onClick={onOpenLightbox}
-          title="Nhấp để phóng to toàn màn hình"
-        />
+        {currentUrl ? (
+          <img
+            src={currentUrl}
+            alt={currentItem.caption || productTitle}
+            onError={() => {
+              if (!useBackup && currentItem.anh && !currentItem.anh.startsWith('/')) {
+                setUseBackup(true);
+              }
+            }}
+            className="relative z-10 w-full h-full object-contain cursor-zoom-in transition-opacity duration-300"
+            onClick={onOpenLightbox}
+            title="Nhấp để phóng to toàn màn hình"
+          />
+        ) : null}
 
         {/* Lớp gradient tối nhẹ ở mép dưới để chấm tròn và chỉ số đọc rõ nét */}
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 via-black/30 to-transparent pointer-events-none z-10" />
@@ -704,10 +713,11 @@ export const ProductModal: React.FC<ProductModalProps> = ({
   const gallery = React.useMemo(() => {
     if (!product) return [];
     if (product.thuvien && product.thuvien.length > 0) {
-      return product.thuvien;
+      const valid = product.thuvien.filter((item) => Boolean(item.anh && item.anh.trim()));
+      if (valid.length > 0) return valid;
     }
-    if (product.anh) {
-      return [{ anh: product.anh, caption: product.ten }];
+    if (product.anh && product.anh.trim()) {
+      return [{ anh: product.anh.trim(), caption: product.ten }];
     }
     return [];
   }, [product]);
@@ -778,10 +788,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
   if (!product) return null;
 
-  // Lấy sản phẩm trước và sau từ mảng products để hiển thị thẻ đọc tiếp cuối bài
   const currentProductIndex = products.findIndex((p) => p.id === product.id);
   const prevProduct = hasPrev && currentProductIndex > 0 ? products[currentProductIndex - 1] : null;
   const nextProduct = hasNext && currentProductIndex >= 0 && currentProductIndex < products.length - 1 ? products[currentProductIndex + 1] : null;
+
+  const prevImgUrl = prevProduct?.anh && prevProduct.anh.trim() ? getDriveImageUrl(prevProduct.anh, 300) : '';
+  const nextImgUrl = nextProduct?.anh && nextProduct.anh.trim() ? getDriveImageUrl(nextProduct.anh, 300) : '';
 
   // Xử lý khẩu hiệu (Slogan): ưu tiên trường slogan, nếu không có thì dùng thongdiep
   const displaySlogan = product.slogan?.trim() || product.thongdiep?.trim();
@@ -1179,12 +1191,18 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                       onClick={onPrev}
                       className="group flex items-center gap-3.5 p-3.5 rounded-2xl border border-slate-200 hover:border-[#F37021] bg-white hover:bg-orange-50/40 text-left transition-all shadow-2xs hover:shadow-xs cursor-pointer"
                     >
-                      <div className="w-16 h-16 rounded-xl bg-slate-100 overflow-hidden shrink-0">
-                        <img
-                          src={getDriveImageUrl(prevProduct.anh, 300)}
-                          alt={prevProduct.ten}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                        />
+                      <div className="w-16 h-16 rounded-xl bg-slate-100 overflow-hidden shrink-0 flex items-center justify-center">
+                        {prevImgUrl ? (
+                          <img
+                            src={prevImgUrl}
+                            alt={prevProduct.ten}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-orange-100/70 text-[#F37021]">
+                            <Sparkles className="w-6 h-6" />
+                          </div>
+                        )}
                       </div>
                       <div className="min-w-0 flex-1">
                         <span className="text-[11px] font-bold text-[#F37021] uppercase tracking-wide flex items-center gap-1">
@@ -1222,12 +1240,18 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                           Tổ {nextProduct.to}
                         </span>
                       </div>
-                      <div className="w-16 h-16 rounded-xl bg-slate-100 overflow-hidden shrink-0">
-                        <img
-                          src={getDriveImageUrl(nextProduct.anh, 300)}
-                          alt={nextProduct.ten}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                        />
+                      <div className="w-16 h-16 rounded-xl bg-slate-100 overflow-hidden shrink-0 flex items-center justify-center">
+                        {nextImgUrl ? (
+                          <img
+                            src={nextImgUrl}
+                            alt={nextProduct.ten}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center bg-orange-100/70 text-[#F37021]">
+                            <Sparkles className="w-6 h-6" />
+                          </div>
+                        )}
                       </div>
                     </button>
                   )}

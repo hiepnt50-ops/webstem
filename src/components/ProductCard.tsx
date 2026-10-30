@@ -29,7 +29,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
 
   // Link ảnh bìa (ưu tiên sz=w800 cho thẻ sản phẩm, dự phòng lh3)
   let currentImageUrl = '';
-  if (product.anh) {
+  if (product.anh && product.anh.trim()) {
     if (useBackup) {
       currentImageUrl = getDriveBackupUrl(product.anh);
     } else {
@@ -37,7 +37,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
     }
   }
 
-  const hasImage = Boolean(currentImageUrl) && !imageError;
+  const hasImage = Boolean(currentImageUrl && currentImageUrl.trim()) && !imageError;
 
   const handleImageError = () => {
     if (!useBackup && product.anh && !product.anh.startsWith('/')) {
@@ -115,7 +115,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
     >
       {/* Khung ảnh 4:3 (object-fit: cover) */}
       <div className="relative aspect-[4/3] w-full bg-slate-100 overflow-hidden">
-        {hasImage ? (
+        {hasImage && Boolean(currentImageUrl) ? (
           <img
             src={currentImageUrl}
             alt={product.ten}

@@ -28,18 +28,22 @@ export const TopBar: React.FC<TopBarProps> = ({
               className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg"
               title={site.tentruong}
             >
-              <img
-                src={site.logo}
-                alt="FPT Education - FPT Schools"
-                className="h-10 md:h-12 w-auto object-contain shrink-0"
-                onError={(e) => {
-                  // Dự phòng nếu /logo.png cần đường dẫn /assets/logo.png
-                  const target = e.currentTarget;
-                  if (!target.src.endsWith('/assets/logo.png')) {
-                    target.src = '/assets/logo.png';
-                  }
-                }}
-              />
+              {site.logo && site.logo.trim() ? (
+                <img
+                  src={site.logo}
+                  alt="FPT Education - FPT Schools"
+                  className="h-10 md:h-12 w-auto object-contain shrink-0"
+                  onError={(e) => {
+                    // Dự phòng nếu /logo.png cần đường dẫn /assets/logo.png
+                    const target = e.currentTarget;
+                    if (!target.src.endsWith('/assets/logo.png')) {
+                      target.src = '/assets/logo.png';
+                    }
+                  }}
+                />
+              ) : (
+                <span className="font-bold text-sm text-[#F37021]">{site.tentruong || 'STEM'}</span>
+              )}
             </a>
 
             {/* Dấu phân cách dọc nhỏ */}

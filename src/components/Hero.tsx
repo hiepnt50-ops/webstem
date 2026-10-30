@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({
 
   // Link ảnh xử lý qua thumbnail sz=w2000 hoặc đường dẫn cục bộ
   let currentImageUrl = '';
-  if (site.heroImage) {
+  if (site.heroImage && site.heroImage.trim()) {
     if (useBackup) {
       currentImageUrl = getDriveBackupUrl(site.heroImage) || site.heroImage;
     } else {
@@ -115,7 +115,7 @@ export const Hero: React.FC<HeroProps> = ({
           )}
 
           {/* Ảnh banner chính */}
-          {!imageError ? (
+          {!imageError && Boolean(currentImageUrl) ? (
             <div className="relative w-full h-full hero-image-wrap">
               <img
                 src={currentImageUrl}
