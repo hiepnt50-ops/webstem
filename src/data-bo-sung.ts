@@ -301,8 +301,12 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "Trường TH, THCS và THPT FPT Bắc Giang – Tổ Xã hội",
     "slogan": "30/4/1975 – Mốc son lịch sử, non sông liền một dải, Việt Nam trọn niềm vui thống nhất!",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1ei8umTwhcA0SPtZZuOJ3-aiT5p3Puk6i/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1ei8umTwhcA0SPtZZuOJ3-aiT5p3Puk6i/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1P8vNTrliUAt98hjxSKHufCZ0R0DO9AlS/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1bTBr2oi1goZNQXpTcOH_aW3BPPMTcgCK/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "",
@@ -342,8 +346,12 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1B3LT39F2cArsfyp3sS8YnEBdfRWfzMbq/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1B3LT39F2cArsfyp3sS8YnEBdfRWfzMbq/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1mIRqlflJ6hRfVqenkuABmT6pX6ncbslX/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1R9GaxEmlwIvhJ33yp3zx5WiqbUuTMpDv/view?usp=sharing", "caption": "" }
+    ],
     "mucs": []
   },
   {
@@ -907,8 +915,11 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1aRw82Hx8fqc2sTH4U10md5HKa3NwtiCO/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1aRw82Hx8fqc2sTH4U10md5HKa3NwtiCO/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1wqTDyyu-B8MQqXt4hmcWwA4jVhvoMCZT/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "1. TỔNG QUAN SẢN PHẨM",
@@ -1118,8 +1129,10 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1RwrdXGhtiQ_fTjOU6Q7-LEyU2xR0B6bE/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1RwrdXGhtiQ_fTjOU6Q7-LEyU2xR0B6bE/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "1. TỔNG QUAN SẢN PHẨM",
@@ -1330,8 +1343,10 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/14glVp6sFIdiNUNcCR9PyJLRk-gKptm5v/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/14glVp6sFIdiNUNcCR9PyJLRk-gKptm5v/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "1. TỔNG QUAN SẢN PHẨM",
@@ -1556,8 +1571,10 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1vfYJDdV-nOPwiOVodQ3DOIdpfNHiIpUM/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1vfYJDdV-nOPwiOVodQ3DOIdpfNHiIpUM/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "1. TỔNG QUAN SẢN PHẨM",

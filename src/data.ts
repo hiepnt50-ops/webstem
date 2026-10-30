@@ -289,8 +289,11 @@ Tấm pin năng lượng mặt trời gắn trên đỉnh cấp nguồn độc l
     to: "STEM - Công nghệ",
     ten: "Hệ mặt trời bằng động cơ có thể chuyển động được",
     nhom: "CLB Sáng tạo Kỹ thuật STEM",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/1aRw82Hx8fqc2sTH4U10md5HKa3NwtiCO/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1aRw82Hx8fqc2sTH4U10md5HKa3NwtiCO/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1wqTDyyu-B8MQqXt4hmcWwA4jVhvoMCZT/view?usp=sharing", caption: "" }
+    ],
     mota: `Mô hình cơ điện tử mô phỏng chuyển động tự quay và quỹ đạo quay quanh Mặt Trời của các hành tinh trong Hệ Mặt Trời theo đúng tỉ lệ chu kỳ vật lý.
 
 Trục đồng trục đa tầng, bộ truyền động bánh răng vi sai in 3D, các cánh tay đòn gắn mô hình hành tinh và quả cầu Mặt Trời phát sáng ở tâm.`,
@@ -313,8 +316,10 @@ Trục đồng trục đa tầng, bộ truyền động bánh răng vi sai in 3D
     to: "STEM - Công nghệ",
     ten: "Sản phẩm phòng cháy chữa cháy",
     nhom: "Đội tuyển Nghiên cứu Kỹ thuật THPT",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/1RwrdXGhtiQ_fTjOU6Q7-LEyU2xR0B6bE/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1RwrdXGhtiQ_fTjOU6Q7-LEyU2xR0B6bE/view?usp=sharing", caption: "" }
+    ],
     mota: `Hệ thống phát hiện sớm nguồn lửa và khói thông minh, tự động xoay vòi phun dập lửa tức thì và phát còi báo động khẩn cấp.
 
 Cảm biến ngọn lửa hồng ngoại đa hướng, cảm biến khói, vòi phun áp lực cao định hướng bằng 2 trục động cơ servo và module kích hoạt van điện từ.`,
@@ -337,8 +342,10 @@ Cảm biến ngọn lửa hồng ngoại đa hướng, cảm biến khói, vòi 
     to: "STEM - Công nghệ",
     ten: "Cân AI - Khám sức khoẻ cơ bản",
     nhom: "Nhóm Công nghệ Y tế số FPT",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/14glVp6sFIdiNUNcCR9PyJLRk-gKptm5v/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/14glVp6sFIdiNUNcCR9PyJLRk-gKptm5v/view?usp=sharing", caption: "" }
+    ],
     mota: `Trạm đo khám sức khỏe học đường tự động: tích hợp đo chiều cao laser, cân nặng, tính chỉ số BMI và ứng dụng AI phân tích thể trạng, đưa ra lời khuyên dinh dưỡng.
 
 Bàn cân cảm biến Loadcell độ chính xác cao, thước đo khoảng cách laser TOF, màn hình cảm ứng tương tác và loa AI giọng nói tiếng Việt.`,
@@ -389,8 +396,10 @@ Cơ cấu gắp bóng con lăn cao su, buồng nạp bóng ống xoắn, hai bá
     to: "PDP",
     ten: "Jobi là trợ lý hướng nghiệp",
     nhom: "Học sinh THPT & CLB Hướng nghiệp PDP",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/1vfYJDdV-nOPwiOVodQ3DOIdpfNHiIpUM/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1vfYJDdV-nOPwiOVodQ3DOIdpfNHiIpUM/view?usp=sharing", caption: "" }
+    ],
     mota: `Trợ lý số cá nhân hóa giúp học sinh khám phá sở thích, năng lực bản thân qua bài trắc nghiệm tính cách RIASEC và gợi ý các ngành nghề tương lai phù hợp thời đại số.
 
 Ứng dụng web tương tác thân thiện, bộ câu hỏi định hướng tâm lý trắc nghiệm chuẩn quốc tế, bảng radar hiển thị 6 nhóm tính cách và lộ trình chọn trường.`,
@@ -441,8 +450,12 @@ Sa bàn cao điểm đồi trọc bị bom cày xới, hang đá nơi trú ẩn 
     to: "Xã hội",
     ten: "Xe tăng",
     nhom: "Nhóm học sinh THCS & THPT",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/1ei8umTwhcA0SPtZZuOJ3-aiT5p3Puk6i/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1ei8umTwhcA0SPtZZuOJ3-aiT5p3Puk6i/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1P8vNTrliUAt98hjxSKHufCZ0R0DO9AlS/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1bTBr2oi1goZNQXpTcOH_aW3BPPMTcgCK/view?usp=sharing", caption: "" }
+    ],
     mota: `Mô hình xe tăng chiến đấu lịch sử gắn liền với những mốc son chói lọi của Quân đội nhân dân Việt Nam, tích hợp cơ cấu truyền động xích điều khiển từ xa.
 
 Khung gầm bọc thép mô phỏng, hệ thống bánh xích truyền động đôi, tháp pháo quay 360 độ và nòng pháo có đèn LED chớp nháy tạo hiệu ứng tác chiến.`,
@@ -463,26 +476,16 @@ Khung gầm bọc thép mô phỏng, hệ thống bánh xích truyền động �
   {
     id: "xa-hoi-03",
     to: "Xã hội",
-    ten: "Bảo tàng số: Artstep",
-    nhom: "Nhóm học sinh khối 10, 11",
-    anh: "",
-    thuvien: [],
-    mota: `Số hóa không gian di sản văn hóa và các tác phẩm lịch sử, mỹ thuật thành không gian bảo tàng 3D thực tế ảo tương tác trực tuyến.
-
-Bảo tàng ảo đa phòng trưng bày, tích hợp góc nhìn 360 độ, bảng thông tin số, âm thanh thuyết minh tương tác và hướng dẫn viên ảo.`,
-    ytuong: "Số hóa không gian di sản văn hóa và các tác phẩm lịch sử, mỹ thuật thành không gian bảo tàng 3D thực tế ảo tương tác trực tuyến.",
-    cautao: "Bảo tàng ảo đa phòng trưng bày, tích hợp góc nhìn 360 độ, bảng thông tin số, âm thanh thuyết minh tương tác và hướng dẫn viên ảo.",
-    vatlieu: "Phần mềm mô hình hóa Artsteps, công cụ dựng hình 3D Blender và tư liệu lịch sử được chuẩn hóa.",
-    kienthuc: [
-      { mon: "Khoa học", noidung: "Quang học số, góc nhìn thị giác và phối cảnh ba chiều." },
-      { mon: "Công nghệ", noidung: "Công nghệ thực tế ảo Virtual Reality (VR) trên nền web." },
-      { mon: "Kỹ thuật", noidung: "Tối ưu hóa đa giác 3D và dựng bản đồ ánh sáng cho trình duyệt." },
-      { mon: "Toán học", noidung: "Hệ tọa độ không gian 3 chiều (X, Y, Z) và ma trận camera." },
-      { mon: "Mĩ thuật", noidung: "Bố cục trưng bày nghệ thuật đương đại và chiếu sáng điểm nhấn." }
+    ten: "Bảo tàng số: Artstep_SP môn Lịch sử",
+    nhom: "",
+    anh: "https://drive.google.com/file/d/1B3LT39F2cArsfyp3sS8YnEBdfRWfzMbq/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1B3LT39F2cArsfyp3sS8YnEBdfRWfzMbq/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1mIRqlflJ6hRfVqenkuABmT6pX6ncbslX/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1R9GaxEmlwIvhJ33yp3zx5WiqbUuTMpDv/view?usp=sharing", caption: "" }
     ],
-    sangtao: "Đem bảo tàng đến mọi lớp học, cho phép bất kỳ ai cũng có thể chiêm ngưỡng di sản văn hóa chỉ với một cú chạm.",
-    phattrien: "Tương thích kính VR di động và nhúng trợ lý ảo giọng nói AI tiếng Việt hướng dẫn du khách tham quan.",
-    thongdiep: "Gìn giữ hồn di sản ngàn năm trên đôi cánh công nghệ số hiện đại."
+    mota: "",
+    mucs: []
   }
 
   // ----- MẪU (copy dòng này để thêm sản phẩm mới) -----
@@ -539,10 +542,20 @@ function mergeProducts(base: StemProduct[], boSung: BoSungProduct[]): StemProduc
       if (item.nhom) matched.nhom = item.nhom;
       if (item.slogan) matched.slogan = item.slogan;
       matched.mucs = item.mucs;
-      // GIỮ NGUYÊN ảnh và thư viện ảnh đã có (không ghi đè bằng "" hoặc [])
-      if (!matched.anh && item.anh) matched.anh = item.anh;
-      if ((!matched.thuvien || matched.thuvien.length === 0) && item.thuvien && item.thuvien.length > 0) {
+      // Cập nhật ảnh nếu có ảnh mới
+      if (item.anh) matched.anh = item.anh;
+      if (item.thuvien && item.thuvien.length > 0) {
         matched.thuvien = item.thuvien;
+      }
+      if (item.id === 'xh-bao-tang-so-artstep') {
+        matched.mota = '';
+        matched.ytuong = '';
+        matched.cautao = '';
+        matched.vatlieu = '';
+        matched.kienthuc = [];
+        matched.sangtao = '';
+        matched.phattrien = '';
+        matched.thongdiep = '';
       }
     } else {
       // Nếu chưa có trong danh sách thì thêm mới
