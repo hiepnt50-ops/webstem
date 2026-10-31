@@ -426,8 +426,13 @@ Cơ cấu gắp bóng con lăn cao su, buồng nạp bóng ống xoắn, hai bá
     to: "Xã hội",
     ten: "Căn cứ 'Tổ trình sát mặt đường' - SP môn Ngữ văn",
     nhom: "Nhóm học sinh khối 9 FPT",
-    anh: "",
-    thuvien: [],
+    anh: "https://drive.google.com/file/d/1vfrxMoDMfVjjksydvBsGoWDzTo40qquT/view?usp=sharing",
+    thuvien: [
+      { anh: "https://drive.google.com/file/d/1vfrxMoDMfVjjksydvBsGoWDzTo40qquT/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1ozbVRIG1NPtfCTHrW47rpdomw99zC59h/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1syhxGbwNoITfhccZEPjCymwcXAQfTuwH/view?usp=sharing", caption: "" },
+      { anh: "https://drive.google.com/file/d/1q-p2O51Zr_O0UOahut64XQ0j4cBCMocY/view?usp=sharing", caption: "" }
+    ],
     mota: `Tái hiện không gian sống và chiến đấu quả cảm của ba nữ thanh niên xung phong tại cao điểm đường Trường Sơn trong tác phẩm văn học 'Những ngôi sao xa xôi'.
 
 Sa bàn cao điểm đồi trọc bị bom cày xới, hang đá nơi trú ẩn của tổ trinh sát, hòm thuốc, radio, đèn dầu và quả bom nổ chậm.`,

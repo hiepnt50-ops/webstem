@@ -94,8 +94,13 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1vfrxMoDMfVjjksydvBsGoWDzTo40qquT/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1vfrxMoDMfVjjksydvBsGoWDzTo40qquT/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1ozbVRIG1NPtfCTHrW47rpdomw99zC59h/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1syhxGbwNoITfhccZEPjCymwcXAQfTuwH/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1q-p2O51Zr_O0UOahut64XQ0j4cBCMocY/view?usp=sharing", "caption": "" }
+    ],
     "mucs": [
       {
         "tieude": "1. TỔNG QUAN SẢN PHẨM",
@@ -1780,8 +1785,13 @@ export const sanPhamBoSung: BoSungProduct[] = [
     ],
     "nhom": "",
     "slogan": "",
-    "anh": "",
-    "thuvien": [],
+    "anh": "https://drive.google.com/file/d/1jE9OGMS9CVS80kcwUBdiI2C9sFx5oh9m/view?usp=sharing",
+    "thuvien": [
+      { "anh": "https://drive.google.com/file/d/1jE9OGMS9CVS80kcwUBdiI2C9sFx5oh9m/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/1u1oZoT5Py3ZuVbB0dYHjcLUkgzAdAMZI/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/15FPmAGMKxJwQOL17eCRXB6HRm_HYleJq/view?usp=sharing", "caption": "" },
+      { "anh": "https://drive.google.com/file/d/18h-joG_XmC-ikLosP-J53J88lkDtm4Qj/view?usp=sharing", "caption": "" }
+    ],
     "mucs": []
   }
 ];
