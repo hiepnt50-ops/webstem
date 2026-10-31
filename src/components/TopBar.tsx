@@ -22,17 +22,17 @@ export const TopBar: React.FC<TopBarProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between py-2.5 sm:py-3 gap-2.5 sm:gap-6">
           
           {/* Logo & Tên sự kiện */}
-          <div className="flex items-center justify-between sm:justify-start gap-3">
+          <div className="flex items-center gap-2.5 sm:gap-3.5 min-w-0">
             <a 
               href="/" 
-              className="flex items-center gap-3 shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg"
+              className="flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-lg"
               title={site.tentruong}
             >
               {site.logo && site.logo.trim() ? (
                 <img
                   src={site.logo}
                   alt="FPT Education - FPT Schools"
-                  className="h-10 md:h-12 w-auto object-contain shrink-0"
+                  className="h-9 sm:h-10 md:h-12 w-auto object-contain shrink-0 max-w-[130px] sm:max-w-none"
                   onError={(e) => {
                     // Dự phòng nếu /logo.png cần đường dẫn /assets/logo.png
                     const target = e.currentTarget;
@@ -42,19 +42,19 @@ export const TopBar: React.FC<TopBarProps> = ({
                   }}
                 />
               ) : (
-                <span className="font-bold text-sm text-[#F37021]">{site.tentruong || 'STEM'}</span>
+                <span className="font-bold text-xs sm:text-sm text-[#F37021]">{site.tentruong || 'STEM'}</span>
               )}
             </a>
 
             {/* Dấu phân cách dọc nhỏ */}
-            <div className="h-6 w-px bg-slate-200 hidden md:block shrink-0" />
+            <div className="h-6 w-px bg-slate-200 hidden sm:block shrink-0" />
 
             {/* Tên ngày hội bên cạnh logo */}
-            <div className="text-right sm:text-left">
-              <span className="block text-xs md:text-sm font-extrabold text-[#F37021] tracking-tight leading-tight uppercase">
+            <div className="min-w-0 flex-1 text-left">
+              <span className="block text-[11px] xs:text-xs sm:text-xs md:text-sm font-extrabold text-[#F37021] tracking-tight leading-tight uppercase truncate sm:whitespace-normal">
                 {site.tieude}
               </span>
-              <span className="text-[11px] text-slate-500 font-medium hidden sm:block">
+              <span className="text-[10px] sm:text-[11px] text-slate-500 font-medium hidden sm:block truncate">
                 {site.donvi} · {site.namhoc}
               </span>
             </div>
@@ -72,11 +72,12 @@ export const TopBar: React.FC<TopBarProps> = ({
             />
             {searchQuery && (
               <button
+                type="button"
                 onClick={() => onSearchChange('')}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-0.5 text-slate-400 hover:text-slate-600 rounded-md"
+                className="absolute right-1.5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-700 active:text-slate-900 rounded-lg cursor-pointer transition-colors"
                 aria-label="Xóa từ khóa tìm kiếm"
               >
-                <X className="w-3.5 h-3.5" />
+                <X className="w-4 h-4" />
               </button>
             )}
           </div>

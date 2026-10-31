@@ -1003,12 +1003,12 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                   </span>
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight">
+                <h1 className="text-xl sm:text-3xl md:text-4xl font-black text-slate-900 leading-snug sm:leading-tight tracking-tight">
                   {product.ten}
                 </h1>
 
                 {product.nhom && (
-                  <div className="flex items-center gap-2 text-sm sm:text-base text-slate-600 font-medium pt-1">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm md:text-base text-slate-600 font-medium pt-0.5 sm:pt-1">
                     <Users className="w-4 h-4 text-[#F37021] shrink-0" />
                     <span>{product.nhom}</span>
                   </div>
@@ -1016,7 +1016,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
                 {/* BĂNG KHẨU HIỆU (SLOGAN) NỔI BẬT NGAY DƯỚI TÊN */}
                 {displaySlogan && (
-                  <div className="mt-4 p-4 sm:p-5 rounded-r-2xl border-l-[6px] border-[#F37021] bg-gradient-to-r from-orange-100/90 via-orange-50/70 to-amber-50/40 text-[#c2510b] font-black text-base sm:text-lg md:text-xl tracking-wide uppercase leading-snug shadow-2xs">
+                  <div className="mt-3 sm:mt-4 p-3.5 sm:p-5 rounded-r-2xl border-l-4 sm:border-l-[6px] border-[#F37021] bg-gradient-to-r from-orange-100/90 via-orange-50/70 to-amber-50/40 text-[#c2510b] font-black text-sm sm:text-base md:text-lg tracking-wide uppercase leading-snug shadow-2xs">
                     {displaySlogan}
                   </div>
                 )}

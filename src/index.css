@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@layer utilities {
+  /* Ẩn thanh cuộn nhưng vẫn cuộn ngang/dọc mượt mà trên mobile và tablet */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

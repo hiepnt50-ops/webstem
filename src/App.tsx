@@ -114,48 +114,69 @@ export default function App() {
         id="danh-sach-san-pham" 
         className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 scroll-mt-28"
       >
-        {/* Tiêu đề danh mục và điều khiển lọc */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        {/* Tiêu đề danh mục và thông tin lọc */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-              {selectedDept === 'Tất cả' ? 'Tất cả sản phẩm STEM' : `Tổ ${selectedDept}`}
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-2">
+              <span>{selectedDept === 'Tất cả' ? 'Tất cả sản phẩm STEM' : `Tổ ${selectedDept}`}</span>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-bold bg-orange-100 text-[#C2410C]">
+                {filteredProducts.length}
+              </span>
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
-              Hiển thị <span className="font-bold text-slate-800 font-mono">{filteredProducts.length}</span> sản phẩm
-              {searchQuery && ` khớp với "${searchQuery}"`}
+              {searchQuery ? (
+                <span>Đang lọc theo từ khóa: <strong className="text-slate-800 font-semibold">"{searchQuery}"</strong></span>
+              ) : (
+                <span>Khám phá các đề tài và mô hình sáng tạo STEM của thầy và trò FPT</span>
+              )}
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2">
-              <label htmlFor="dept-select" className="text-xs font-semibold text-slate-600 whitespace-nowrap">
-                Tổ chuyên môn:
-              </label>
-              <select
-                id="dept-select"
-                value={selectedDept}
-                onChange={(e) => setSelectedDept(e.target.value as DepartmentType)}
-                className="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer shadow-2xs"
-              >
-                {DEPARTMENTS.map((dept) => (
-                  <option key={dept} value={dept}>
-                    {dept} ({deptCounts[dept] || 0})
-                  </option>
-                ))}
-              </select>
-            </div>
+          {(selectedDept !== 'Tất cả' || searchQuery) && (
+            <button
+              type="button"
+              onClick={() => {
+                setSelectedDept('Tất cả');
+                setSearchQuery('');
+              }}
+              className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-50 hover:bg-orange-100/80 text-xs font-bold text-[#E8590C] border border-orange-200 transition-colors cursor-pointer min-h-[36px]"
+            >
+              <span>Xóa bộ lọc</span>
+            </button>
+          )}
+        </div>
 
-            {(selectedDept !== 'Tất cả' || searchQuery) && (
-              <button
-                onClick={() => {
-                  setSelectedDept('Tất cả');
-                  setSearchQuery('');
-                }}
-                className="text-xs font-semibold text-[#F37021] hover:underline cursor-pointer whitespace-nowrap"
-              >
-                Đặt lại
-              </button>
-            )}
+        {/* Thanh lọc tổ chuyên môn: Cuộn ngang trên di động/tablet, trải rộng trên desktop */}
+        <div className="relative mb-6 sm:mb-8">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth py-1 -mx-4 px-4 sm:mx-0 sm:px-0 sm:flex-wrap">
+            {DEPARTMENTS.map((dept) => {
+              const isSelected = selectedDept === dept;
+              const count = deptCounts[dept] || 0;
+              return (
+                <button
+                  key={dept}
+                  type="button"
+                  onClick={() => setSelectedDept(dept)}
+                  className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition-all cursor-pointer min-h-[40px] shrink-0 ${
+                    isSelected
+                      ? 'bg-[#E8590C] text-white shadow-xs scale-102'
+                      : 'bg-white hover:bg-slate-100/80 text-slate-700 hover:text-slate-900 border border-slate-200/90 shadow-2xs'
+                  }`}
+                  aria-pressed={isSelected}
+                >
+                  <span>{dept}</span>
+                  <span
+                    className={`inline-flex items-center justify-center px-1.5 py-0.5 rounded-md text-[11px] font-mono font-bold ${
+                      isSelected
+                        ? 'bg-white/25 text-white'
+                        : 'bg-slate-100 text-slate-600'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
 

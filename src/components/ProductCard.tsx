@@ -158,7 +158,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
       </div>
 
       {/* Thông tin sản phẩm */}
-      <div className="p-4 flex flex-col flex-1 justify-between gap-3">
+      <div className="p-3.5 sm:p-4 flex flex-col flex-1 justify-between gap-3">
         <div className="space-y-1.5">
           {/* Tên sản phẩm tối đa 2 dòng */}
           <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#F37021] transition-colors line-clamp-2 leading-snug">
@@ -185,7 +185,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onClick }) =>
 
         {/* Nút "Xem chi tiết" cam full chiều rộng thẻ */}
         <div className="pt-2">
-          <div className="w-full py-2 px-3 bg-[#F37021] group-hover:bg-[#d85e13] text-white rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-xs transition-colors">
+          <div className="w-full py-2.5 px-3 bg-[#F37021] group-hover:bg-[#d85e13] text-white rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-xs transition-colors min-h-[40px]">
             <span>Xem chi tiết</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </div>

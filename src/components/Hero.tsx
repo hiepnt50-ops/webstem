@@ -167,7 +167,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Tiêu đề chính 2 dòng: "NGÀY HỘI" và "CHUYỂN ĐỔI SỐ" sắc cam đậm có bóng sáng */}
-              <h1 className="hero-stagger-2 text-3xl sm:text-4xl md:text-[2.6rem] lg:text-[3rem] font-black tracking-tight leading-[1.12] text-slate-900">
+              <h1 className="hero-stagger-2 text-[1.75rem] sm:text-4xl md:text-[2.5rem] lg:text-[2.9rem] xl:text-[3.1rem] font-black tracking-tight leading-[1.12] text-slate-900">
                 <span className="block text-slate-900">NGÀY HỘI</span>
                 <span 
                   className="block text-[#E8590C]" 
@@ -188,17 +188,18 @@ export const Hero: React.FC<HeroProps> = ({
               </p>
 
               {/* Nút "Xem sản phẩm" & Dòng thông tin nhỏ */}
-              <div className="hero-stagger-5 pt-1.5 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="hero-stagger-5 pt-1.5 flex flex-wrap items-center gap-2.5 sm:gap-4">
                 <button
+                  type="button"
                   onClick={handleScrollClick}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#E8590C] hover:bg-[#c2410c] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#E8590C] hover:bg-[#c2410c] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer min-h-[44px]"
                 >
                   <span>Xem sản phẩm</span>
                   <ArrowDown className="w-4 h-4" />
                 </button>
 
                 {/* Ô thông tin nền trắng trong suốt nổi bật trên nền cam đào */}
-                <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white/70 backdrop-blur-xs px-3 py-2 rounded-xl border border-white/60 shadow-2xs">
+                <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 bg-white/70 backdrop-blur-xs px-3.5 py-2.5 rounded-xl border border-white/60 shadow-2xs min-h-[44px]">
                   <span className="font-mono text-slate-900 font-bold">{totalCount}</span>
                   <span>sản phẩm</span>
                   <span className="text-slate-400">·</span>
